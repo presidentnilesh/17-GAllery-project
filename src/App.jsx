@@ -33,14 +33,17 @@ const App = () => {
     <div className='relative flex h-[80%] flex-wrap gap-4 p-2'>
       {printUserData}
     </div>
-    <div  className='flex justify-center items-center gap-6 p-4'>
-    <button onClick={()=>{
-      if (index>1) {
-          
-        setUserData([])
-        setIndex(index-1)
-      }
-    }} 
+
+    <div  
+      style={{opacity:index == 1?0.5 : 1}}
+      className='flex justify-center items-center gap-6 p-4'>
+      <button onClick={()=>{
+        if (index>1) {
+            
+          setUserData([])
+          setIndex(index-1)
+        }
+      }} 
     className='rounded-2xl px-4 text-black bg-amber-300 font-semibold cursor-pointer active:scale-95'>
       Preview</button>
       <h2>Page {index}</h2>
