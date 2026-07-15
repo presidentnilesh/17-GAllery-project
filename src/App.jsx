@@ -35,7 +35,7 @@ const App = () => {
     </div>
 
     <div  
-      style={{opacity:index == 1?0.5 : 1}}
+     
       className='flex justify-center items-center gap-6 p-4'>
       <button onClick={()=>{
         if (index>1) {
@@ -43,10 +43,21 @@ const App = () => {
           setUserData([])
           setIndex(index-1)
         }
-      }} 
+      }}
+        style={{opacity:index == 1?0.5 : 1}}
     className='rounded-2xl px-4 text-black bg-amber-300 font-semibold cursor-pointer active:scale-95'>
       Preview</button>
-      <h2>Page {index}</h2>
+      
+      {index -3 >0 && (<button className='bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded-lg text-black '>{index - 3}</button>)}
+      {index -2 >0 && (<button className='bg-gray-200 hover:bg-gray-300  px-2 py-1 rounded-lg  text-black'>{index -2}</button>)}
+      {index -1 >0 && (<button className='bg-gray-200 hover:bg-gray-300  px-2 py-1 rounded-lg text-black'>{index -1}</button>)}
+  
+      <h2 className='bg-gray-600 hover:bg-gray-300  px-2 py-1 rounded-lg text-white' >{index}</h2>
+     
+      <button className='bg-gray-200 hover:bg-gray-300  px-2 py-1 rounded-lg text-black'>{index +1}</button>
+      <button className='bg-gray-200 hover:bg-gray-300  px-2 py-1 rounded-lg text-black'>{index +2}</button>
+      <button className='bg-gray-200 hover:bg-gray-300  px-2 py-1 rounded-lg text-black'>{index +3}</button>
+      
     <button onClick={()=>{
       
       setUserData([])
